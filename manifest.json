@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "Pin Tabs",
-  "version": "1.0",
-  "description": "Open bookmark folders with 'PM-' prefix in new windows and pin the tabs automatically.",
-  "permissions": ["bookmarks", "tabs", "contextMenus"],
+  "version": "0.0.1",
+  "description": "One click to open and pin tabs from 📌-prefixed bookmark folders. Boost productivity with organized browsing!",
+  "permissions": ["bookmarks", "tabs"],
   "background": {
     "service_worker": "background.js"
   },
