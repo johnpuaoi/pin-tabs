@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pin Tabs 📌</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      width: 300px;
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: background-color 0.3s ease, box-shadow 0.2s ease;
+      outline: none;
+    }
+    button:hover {
+      background-color: #0056b3;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    button:active {
+      background-color: #004085;
+    }
+    #folders {
+      margin-top: 20px;
+    }
+    .folder {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .folder:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+  <h1>Pin Tabs</h1>
+  <div id="folders">
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
