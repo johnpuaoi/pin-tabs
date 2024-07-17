@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Pin Tabs 📌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
@@ -11,33 +12,47 @@
       width: 300px;
       background-color: #f9f9f9;
       padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
     }
     h1 {
-      color: #333;
+      color: #EF4444;      ;
       text-align: center;
       font-weight: 600;
       margin-bottom: 20px;
+      font-family: 'Lobster', cursive;
     }
     button {
+      height: 36px;
+      font-size: 14px;
       margin-top: 15px;
       width: 100%;
-      padding: 12px;
-      background-color: #007BFF;
-      color: white;
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-top: 8px;
+      padding-bottom: 8px; /* px-2.5 */
+      background-color: #F9FAFB; /* bg-gray-50, overridden by specific color */
+      color: rgb(51, 65, 85); /* text-gray-700, overridden by specific color */
       border: none;
-      border-radius: 6px;
+      border-radius: 6px; /* rounded-md */
       cursor: pointer;
-      font-weight: 500;
+      font-weight: 500; /* font-medium */
       text-transform: uppercase;
       letter-spacing: 0.05em;
       transition: background-color 0.3s ease, box-shadow 0.2s ease;
       outline: none;
+      display: inline-flex; /* inline-flex */
+      align-items: center; /* items-center */
+      justify-content: center; /* justify-center */
+      flex-shrink: 0; /* flex-shrink-0 */
+      gap: 1.5px; /* gap-x-1.5 */
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
+      border: 1px solid #E5E7EB; /* ring-1 ring-inset ring-gray-300 */
+      text-align: center;
     }
     button:hover {
-      background-color: #0056b3;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      background-color: #F3F4F6
+      ;
+      box-shadow: 0 1px 2px 0 #0000000d;
     }
     button:active {
       background-color: #004085;
@@ -57,12 +72,18 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
     }
+
+    #help-message {
+      font-size: 12px;;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
   <h1>Pin Tabs</h1>
   <div id="folders">
   </div>
+  <p id="help-message">You can add new items by prepending 📌 to the bookmark folder you want to add, you can even do it to subfolders.</p>
   <script src="popup.js"></script>
 </body>
 </html>

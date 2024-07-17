@@ -1,8 +1,8 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'openAndPin') {
     openAndPinBookmarks(request.folderId);
-  } else if (request.action === 'getPMFolders') {
-    getPMFolders(sendResponse);
+  } else if (request.action === 'getPTFolders') {
+    getPTFolders(sendResponse);
     return true; // keep the messaging channel open for sendResponse
   }
 });
@@ -34,20 +34,20 @@ function openAndPinBookmarks(bookmarkId) {
   });
 }
 
-function getPMFolders(callback) {
+function getPTFolders(callback) {
   chrome.bookmarks.getTree((bookmarkTreeNodes) => {
-    const pmFolders = [];
-    function findPMFolders(nodes) {
+    const pTFolders = [];
+    function findPTFolders(nodes) {
       for (const node of nodes) {
         if (node.children) {
           if (node.title.startsWith('📌')) {
-            pmFolders.push({ id: node.id, title: node.title });
+            pTFolders.push({ id: node.id, title: node.title });
           }
-          findPMFolders(node.children);
+          findPTFolders(node.children);
         }
       }
     }
-    findPMFolders(bookmarkTreeNodes);
-    callback(pmFolders);
+    findPTFolders(bookmarkTreeNodes);
+    callback(pTFolders);
   });
 }

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  chrome.runtime.sendMessage({ action: 'getPMFolders' }, (pmFolders) => {
+  chrome.runtime.sendMessage({ action: 'getPTFolders' }, (pmFolders) => {
     const foldersDiv = document.getElementById('folders');
     if (pmFolders.length === 0) {
       const noFoldersMsg = document.createElement('p');
@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       pmFolders.forEach((folder) => {
         const button = document.createElement('button');
-        button.textContent = folder.title;
+        const pTag = document.createElement('p');
+        pTag.textContent = folder.title.replace('📌', '');
+        button.appendChild(pTag);
         button.addEventListener('click', () => {
           chrome.runtime.sendMessage({
             action: 'openAndPin',
